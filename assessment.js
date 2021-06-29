@@ -15,6 +15,13 @@ const tweetDivided = document.getElementById('tweet-area'); //ツイートボタ
     }
 }
 
+userNameImput.onkeydown = event => {
+        if (event.key === 'Enter') {
+          // ボタンのonclick() 処理を呼び出す
+          assessmentButton.onclick();
+        }
+    };
+
 //ボタンが押された時の処理
 assessmentButton.onclick = () => {
     const userName = userNameImput.value;
@@ -90,13 +97,6 @@ const answers =[
  */
 
 function assessment(userName) {
-    
-    userNameInput.onkeydown = event => {
-        if (event.key === 'Enter') {
-          // ボタンのonclick() 処理を呼び出す
-          assessmentButton.onclick();
-        }
-    };
 
     //全文字のコード番号を取得してそれを足して合わせる
     let sumOfCharCode = 0;
